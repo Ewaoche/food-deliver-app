@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "citycard",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
