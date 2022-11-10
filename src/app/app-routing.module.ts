@@ -4,13 +4,34 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./customer/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./customer/profile/profile.module').then( m => m.ProfilePageModule)
   }
+  
 ];
 
 @NgModule({
